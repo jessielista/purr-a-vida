@@ -1,7 +1,7 @@
 function BakeryItems() {
   return (
     <div className='bakerylist'>
-      <BakedGood />
+      <BakedGood food='concha' />
       <BakedGood />
       <BakedGood />
       <BakedGood />
@@ -10,26 +10,22 @@ function BakeryItems() {
     </div>
   )
 }
+const title = 'Bread #2'
+const price = 2.34
+const description = 'Product description goes here.'
+const img = 'https://i.imgur.com/NmhFVwam.jpg'
 
-const BakedGood = () => {
+const BakedGood = (props) => {
+  console.log(props)
   return (
-    <div>
-      <Image />
-      <ItemTitle />
-      <ItemPrice />
-      <ItemDescription />
+    <div className='bakery-item'>
+      <img src={img} alt='' />
+      <h1>{title}</h1>
+      <h3>{price}</h3>
+      <h4>{description}</h4>
+      <p>{props.food}</p>
     </div>
   )
 }
-
-const Image = () => <img src='https://i.imgur.com/NmhFVwam.jpg' alt='' />
-const ItemTitle = () => <h1>Bread #1</h1>
-const ItemDescription = () => (
-  <h4>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua.
-  </h4>
-)
-const ItemPrice = () => <h3>$2.00</h3>
 
 export default BakeryItems
